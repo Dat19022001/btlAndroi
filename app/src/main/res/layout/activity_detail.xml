@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:src="@drawable/back"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="-25dp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginBottom="30dp"
+            android:weightSum="3">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="1">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/sach"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name: Sách Hay"
+                    android:textSize="20dp"
+                    android:textColor="@color/yellow"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author: Đạt"
+                    android:textSize="18dp"
+                    android:textColor="@color/yellow"
+                    android:layout_marginBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: 20/10/2023"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/yellow"/>
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: 10$"
+                    android:textSize="18dp"
+                    android:textColor="@color/yellow"
+                    android:paddingBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PageNumber: 200"
+                    android:textSize="18dp"
+                    android:textColor="@color/yellow"
+                    android:paddingBottom="5dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add To Cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/yellow"
+            android:layout_marginBottom="5dp"
+            />
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuốn sách được đưa đến với độc giả với hy vọng nó sẽ mang lại nhiều lợi ích cho những sinh viên học sinh luôn  khao khát thành công ở nhiều quốc gia. Cuốn sách đạt kỉ lục sách quốc văn giải Vàng “ Sách được bạn đọc yêu thích bình chọn”. Các bạn có biết vì sao nó đạt được kỉ lục như vậy không? Tôi sẽ nói cho các bạn lí do cuốn sách này lại có sức hấp dẫn lớn như vậy."
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/yellow"
+            android:layout_marginBottom="5dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            >
+            <RatingBar
+                android:id="@+id/rate"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="0.1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
