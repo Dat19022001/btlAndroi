@@ -14,6 +14,9 @@ public class Book implements Serializable {
 
     private List<Comment> commentList;
 
+    public Book() {
+    }
+
     public Book(String id, String name, String author, String imgUrl, String datePublish, String description, Cat cat, int pageNumber, int buyNumber, float price, float rate) {
         this.id = id;
         this.name = name;

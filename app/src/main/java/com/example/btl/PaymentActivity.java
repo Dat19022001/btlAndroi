@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.btl.api.ApiService;
@@ -28,6 +29,7 @@ public class PaymentActivity extends AppCompatActivity {
 
     EditText Date,Address,Phone;
 
+    ImageView back;
     Button Payment;
 
     TextView Tong;
@@ -48,6 +50,7 @@ public class PaymentActivity extends AppCompatActivity {
         Phone = findViewById(R.id.Phone);
         Payment = findViewById(R.id.Thanhtoan);
         Tong = findViewById(R.id.tong);
+        back = findViewById(R.id.back);
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -101,6 +104,12 @@ public class PaymentActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

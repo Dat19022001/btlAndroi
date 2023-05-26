@@ -1,6 +1,7 @@
 package com.example.btl.api;
 
 import com.example.btl.model.AddCart;
+import com.example.btl.model.Book;
 import com.example.btl.model.BookAll;
 import com.example.btl.model.BookDetail;
 import com.example.btl.model.GetBill;
@@ -22,6 +23,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
 
@@ -35,6 +37,10 @@ public interface ApiService {
     //get all book
     @GET("/product")
     Call<BookAll> getAllBook();
+
+    // add book
+    @POST("/product")
+    Call<BookDetail> addBook(@Body Book book);
 
     //get book sap sap theo rate
     @GET("/product/rate")
@@ -50,6 +56,14 @@ public interface ApiService {
     //get book theo name
     @GET("/product/name/{productName}")
     Call<BookAll> getBookByName(@Path("productName") String productName);
+
+    // delete
+    @DELETE("/product")
+    Call<BookDetail> deleteBook(@Query("id") String id);
+
+    // update book
+    @PUT("/product")
+    Call<BookDetail> updateBook(@Body Book book);
 
     // get giỏ hàng theo userId
     @GET("/cart/{UserId}")
@@ -75,6 +89,6 @@ public interface ApiService {
     Call<GetOrder> order(@Body Order order);
 
     // tìm bill theo ngày
-    @GET("/order/date/{date}")
-    Call<GetBill> getOrderbyDate(@Path("date") String date);
+    @GET("/order/date/{date}/{userId}")
+    Call<GetBill> getOrderbyDate(@Path("date") String date, @Path("userId") String userId);
 }

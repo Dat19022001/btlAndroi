@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.btl.LoginActivity;
+import com.example.btl.ManagerActivity;
 import com.example.btl.R;
 import com.example.btl.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -136,6 +137,13 @@ public class FragmentUser extends Fragment {
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent,1);
 
+            }
+        });
+        btManager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ManagerActivity.class);
+                startActivity(intent);
             }
         });
     }

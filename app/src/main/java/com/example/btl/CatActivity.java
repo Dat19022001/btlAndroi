@@ -61,7 +61,7 @@ public class CatActivity extends AppCompatActivity {
 
     private void callApi() {
         if(check.equals("fairy tales")){
-            ApiService.apiService.getBookCat("fairy tales",3).enqueue(new Callback<BookAll>() {
+            ApiService.apiService.getBookCat("fairy tales",10).enqueue(new Callback<BookAll>() {
                 @Override
                 public void onResponse(Call<BookAll> call, Response<BookAll> response) {
                     BookAll bookCt = response.body();
@@ -76,7 +76,7 @@ public class CatActivity extends AppCompatActivity {
                 }
             });
         }else{
-            ApiService.apiService.getBookCat("comic",3).enqueue(new Callback<BookAll>() {
+            ApiService.apiService.getBookCat("comic",10).enqueue(new Callback<BookAll>() {
                 @Override
                 public void onResponse(Call<BookAll> call, Response<BookAll> response) {
                     BookAll bookComic = response.body();

@@ -122,8 +122,11 @@ public class FragmentBill extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                UserId = user.getUid();
+
                 String date = dFrom.getText().toString().trim();
-                ApiService.apiService.getOrderbyDate(date).enqueue(new Callback<GetBill>() {
+                ApiService.apiService.getOrderbyDate(date,UserId).enqueue(new Callback<GetBill>() {
                     @Override
                     public void onResponse(Call<GetBill> call, Response<GetBill> response) {
                         GetBill bill = response.body();

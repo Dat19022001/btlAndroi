@@ -1,6 +1,7 @@
 package com.example.btl.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.btl.DetailBillActivity;
 import com.example.btl.R;
 import com.example.btl.model.Bill;
 import com.example.btl.model.ProductCart;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RecycleViewAdapterBill extends RecyclerView.Adapter<RecycleViewAdapterBill.HomeViewHolder> {
@@ -47,6 +50,14 @@ public class RecycleViewAdapterBill extends RecyclerView.Adapter<RecycleViewAdap
         holder.address.setText(bill.getAddress());
         holder.date.setText(bill.getDate());
         holder.tong.setText(bill.getTong() + "$");
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailBillActivity.class);
+                intent.putExtra("listBill",(Serializable) bill.getProducts());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

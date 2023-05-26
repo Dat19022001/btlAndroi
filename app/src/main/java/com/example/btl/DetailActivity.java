@@ -86,7 +86,7 @@ public class DetailActivity extends AppCompatActivity {
         name.setText("Name: " + book.getName());
         author.setText("Author: "+ book.getAuthor());
         date.setText("Date: "+ book.getDatePublish());
-        price.setText("Price: "+ book.getPrice());
+        price.setText("Price: "+ book.getPrice() + "$");
         pageNumber.setText("PageNumber: "+ book.getPageNumber());
         des.setText(book.getDescription());
         ratingBar.setRating(book.getRate());
